@@ -1,5 +1,7 @@
 package com.ashish.spring;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +42,16 @@ public class Company {
                 ", departments=" + departments +
                 ", countryCapital=" + countryCapital +
                 '}';
+    }
+
+    @PostConstruct
+    private void afterCreate(){
+        System.out.println("Company object just got created");
+    }
+
+    @PreDestroy
+    private void beforeDestroyMethod(){
+        System.out.println("Company object is about to get destroyed");
     }
 
 }

@@ -45,4 +45,5 @@
             </map>
         </property>
     </bean>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 </beans>
