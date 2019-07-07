@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--    <bean name="emp" class="com.ashish.spring.Employee">-->
+<!--        <property name="id">-->
+<!--            <value>20</value>-->
+<!--        </property>-->
+<!--        <property name="name">-->
+<!--            <value>Ashish Mishra</value>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean name="emp" class="com.ashish.spring.Employee">-->
+<!--        <property name="id" value="31"/>-->
+<!--        <property name="name" value="Ashish Mishra"/>-->
+<!--    </bean>-->
+
+
+    <bean name="theEmployee" class="com.ashish.spring.Employee" p:id="100" p:name="Mahendra Singh Dhoni"></bean>
+
+
+    <bean name="theCompany" class="com.ashish.spring.Company">
+        <property name="emp">
+            <ref bean="theEmployee"></ref>
+        </property>
+        <property name="departments">
+            <list>
+                <value>Finance</value>
+                <value>Marketing</value>
+                <value>Human Resources</value>
+            </list>
+        </property>
+        <property name="countryCapital">
+            <map>
+                <entry key="India" value="New Delhi"></entry>
+                <entry key="Pakistan" value="Islamabad"></entry>
+                <entry key="Australia" value="Canberra"></entry>
+                <entry key="SriLanka" value="Colombo"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>
